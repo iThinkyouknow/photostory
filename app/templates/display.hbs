@@ -1,0 +1,5 @@
+{{#each model.photoSections as |photoSection|}}
+	{{photo-section photoSection=photoSection onDisplay=display}}
+{{/each}}
+
+{{signup-form transitionToExit=(action "transitionToExit")}}

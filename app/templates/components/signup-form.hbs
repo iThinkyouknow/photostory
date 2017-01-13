@@ -1,0 +1,107 @@
+<section class="title">
+	<h3>Love what you are seeing? In a few short steps, this can all be yours! 😉 <br>(This is just a prototype. No details will be recorded so just try it out!)</h3>
+</section>
+
+ 
+<form class="inline-block">
+	<section class="signup-section first-column">
+		<div class="row">
+			<div class="small-3 columns">
+				<label for="email" class="text-right middle email">Email</label>
+			</div>
+			<div class="small-6 columns float-left">
+				{{input type="email" class="email" value=emailAddress placeholder="Type in your email" required=true focus-out="validateEmail"}}
+				{{!--  <input type="email" id="email" class="email" placeholder="Type in your email" value={{email}} required> --}}
+				{{#if emailValidMessage}}
+				<span class="success">{{emailValidMessage}}</span>
+				{{/if}}
+				{{#if emailErrorMessage}}
+				<span class="warning">{{emailErrorMessage}}</span>
+				{{/if}}
+
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="small-3 columns">
+				<label for="password" class="text-right middle password">Password</label>
+			</div>
+			<div class="small-6 columns float-left">
+				{{input type="password" class="password" value=passwordTyped placeholder="password" required=true focus-out="validatePassword"}}
+				{{#if passwordValidMessage}}
+				<span class="success">{{passwordValidMessage}}</span>
+				{{/if}}
+				{{#if passwordErrorMessage}}
+				<span class="warning">{{passwordErrorMessage}}</span>
+				{{/if}}
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="small-3 columns">
+				<label for="password" class="text-right middle password">Confirm Password</label>
+			</div>
+			<div class="small-6 columns float-left">
+				{{input type="password" class="confirmPassword" value=confirmPasswordTyped placeholder="Type password again" required=true focus-out="validateConfirmPassword"}}
+				{{#if confirmPasswordValidMessage}}
+				<span class="success">{{confirmPasswordValidMessage}}</span>
+				{{/if}}
+				{{#if confirmPasswordErrorMessage}}
+				<span class="warning">{{confirmPasswordErrorMessage}}</span>
+				{{/if}}
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="small-3 columns">
+				<label class="text-right middle"></label>
+			</div>
+			<div class="small-6 columns float-left">
+				<button id="submit" class="button small-4" disabled={{isDisabled}} {{action "next" "-100vw"}}>Next</button>
+			</div>
+		</div>
+	</section>
+
+	{{!-- Second Column --}}
+	<section class="signup-section second-column">
+		<div class="row {{if secondColumnDisabled 'hidden'}}">
+			<fieldset class="large-offset-2 large-8 columns">
+				<legend>I acknowledge that: </legend>
+
+				{{input id="checkbox1" type="checkbox" checked=firstChecked required=true}} 
+				<label for="checkbox1" class=""> 
+					I own or am allowed all rights to the posting of these photos, images, media, and words. 
+				</label> <br/>
+
+				{{input id="checkbox2" type="checkbox" checked=secondChecked required=true}} 
+				<label for="checkbox2" class=""> 
+					There are no objectionable or controversial content such as 
+					<br/>	 
+					nudity, pornography, violence, homosexuality, obscenity, profanity, taking of God's name in vain etc. 
+				</label> <br/>
+
+				{{input id="checkbox3" type="checkbox" checked=thirdChecked required=true}} 
+				<label for="checkbox3" class=""> 
+					I understand that this is not a storage website and will not hold Photostory liable for any loss of media and data.
+				</label>
+
+					<div class="row">
+						<div class="columns">
+						<button id="submit" class="button small-4" disabled={{isDisabledTwo}} {{action "next" "-200vw"}}>Next</button>
+						</div>
+					</div>
+
+				</fieldset>
+			</div>
+		</section>
+
+	</form>
+
+<section class="signup-section third-column">
+	<div class="row {{if secondColumnDisabled 'hidden'}} {{if thirdColumnDisabled 'hidden'}}">
+		<div class="columns small-offset-1 small-10 large-offset-5 large-2">
+			<i class="fi-checkbox approved-lg"></i><br/>
+			<p class="signup-approved-text">Congratulations! You made it! <br>(This is only a demo. No account was created. All your uploaded stuff will be deleted.)</p>
+		</div>
+	</div>
+</section>

@@ -1,0 +1,24 @@
+
+	<div class="row" {{action "fadeBar" on='mouseLeave'}} {{action "persistBar" on='mouseEnter'}}>
+		<div class="columns medium-5">
+			<div class="nav-left">
+				{{#link-to 'index'}}<h1 class="logo">Photostory</h1>{{/link-to}}
+			</div>
+		</div>
+
+		<div class="columns medium-1"></div>
+		<div class="columns medium-6">
+			<ul class="float-right">
+				{{#if actionParams}}
+					<li>{{#link-to actionLink actionParams class="button"}}{{actionText}}{{/link-to}}</li>
+				{{else}}
+					<li>{{#link-to actionLink class="button"}}{{actionText}}{{/link-to}}</li>
+				{{/if}}
+				
+				<li class="link">{{#link-to 'index'}}Inspire me!{{/link-to}}</li>
+			</ul>
+		</div>
+		
+	</div>
+	
+

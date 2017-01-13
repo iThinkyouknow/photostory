@@ -1,0 +1,12 @@
+
+{{#each model.photoSections as |photoSection|}}
+	{{photo-section photoSection=photoSection photoURL=(action 'uploadPhotoURL') saveAttribute=(action 'saveAttribute') deletePhoto=(action 'deletePhoto')}}
+	
+{{/each}}
+
+<div class="create-action-buttons">
+<button class="button add-photo-section-button" {{action 'addPhotoSection'}}>Add a new Section! (Start here)</button>
+
+{{#link-to 'display' page.id class="button preview-button"}}Preview!{{/link-to}}
+</div>
+

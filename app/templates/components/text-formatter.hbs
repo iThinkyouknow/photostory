@@ -1,0 +1,38 @@
+<div class="menu-centered" {{action "focusRemain" preventDefault=false}}>
+  <ul class="menu">
+  {{#zf-dropdown-menu class="horizontal"}}
+  <li>
+    <a href="#/">Font</a>
+    <ul class="menu font-style-options-dropdown">
+      <p class="hn">San-Serif Fonts</p>
+      <li><a href="#/" {{action "mouseEnter" "Helvetica Neue" on="mouseEnter"}} {{action "mouseLeave" on="mouseLeave"}} {{action "select" "Helvetica Neue"}} class="hn">Helvetica Neue</a></li>
+      <li><a href="#/" {{action "mouseEnter" "Roboto" on="mouseEnter"}} {{action "mouseLeave" on="mouseLeave"}} {{action "select" "Roboto"}} class="roboto">Roboto</a></li>
+      <hr>
+      <p class="alegreya">Serif Fonts</p>
+      <li><a href="#/" {{action "mouseEnter" "Alegreya" on="mouseEnter"}} {{action "mouseLeave" on="mouseLeave"}} {{action "select" "Alegreya"}} class="alegreya">Alegreya</a></li>
+      <li><a href="#/" {{action "mouseEnter" "Lato" on="mouseEnter"}} {{action "mouseLeave" on="mouseLeave"}} {{action "select" "Lato"}} class="lato">Lato</a></li>
+      <li><a href="#/" {{action "mouseEnter" "Libre Baskerville" on="mouseEnter"}} {{action "mouseLeave" on="mouseLeave"}} {{action "select" "Alegreya"}} class="lib-bask">Libre Baskerville</a></li>
+    </ul>
+  </li>
+  
+  	<li><a href="#/" {{action "fontAction" "increaseFontSize"}}><i class="fi-plus"></i></a></li>
+    <li>Size</li> 
+    <li><a href="#/" {{action "fontAction" "decreaseFontSize"}}><i class="fi-minus"></i></a></li>
+    <li><a href="#/" {{action "fontAction" "boldFont"}}><i class="fi-bold"></i></a></li>
+    <li><a href="#/" {{action "fontAction" "italicFont"}}><i class="fi-italic"></i> </a></li>
+    <li><a href="#/" {{action "fontAction" "underlineFont"}}><i class="fi-underline"></i></a></li>
+    <li><a href="#/" {{action "fontAction" "alignLeft"}}><i class="fi-align-left"></i></a></li>
+    <li><a href="#/" {{action "fontAction" "alignCenter"}}><i class="fi-align-center"></i></a></li>
+    <li><a href="#/" {{action "fontAction" "alignRight"}}><i class="fi-align-right"></i> </a></li>
+    <li><a href="#/" {{action "fontAction" "alignJustify"}}><i class="fi-align-justify"></i></a></li>
+    <li>Color: </li>
+    <li><a href="#/">{{input type="color" value=colorValue change=(action "selectColor") class="width-five"}}</a></li>
+    {{!-- <li><a href="#/"> Color </a></li> --}}
+   
+    
+{{/zf-dropdown-menu}}
+  </ul>
+
+</div>
+
+

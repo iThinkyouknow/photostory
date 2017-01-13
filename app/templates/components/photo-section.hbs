@@ -1,0 +1,37 @@
+<div {{action "mouseMove" on="mouseMove"}}>
+	<input type="file" id={{photoSection.id}} {{action 'upload' on="change"}} class="input-file button {{status}} {{onDisplay}}" accept="image/*">
+	<label for="{{photoSection.id}}" class="button {{status}} {{onDisplay}}"><i class="fi-photo"></i><br> Add Photo! (16:9 Aspect Ratio) <br>Photo may not appear immediately</label>
+
+	{{text-formatter mouseLeft=(action "unselectFont") hover=(action "previewFont") selected=(action "selectFont") remainFocused=(action 'remainFocused') fontSizeStyleActions=(action "fontSizeStyleActions") colorSelect=(action "colorSelect") display=display}}
+
+	<div class="{{bgEffect}}">
+		<div class="{{effects}}">
+			<img src={{photoSection.photoURL}}>
+		</div>
+	</div>
+
+	<div class="button-container button-top button-right {{optionsStatus}} {{onDisplay}}">
+		<button class="button effects-button" {{action 'changeEffectsWithBg' 'dark' 'darkBg'}}>Dark</button>
+		<button class="button effects-button" {{action 'setEffect' 'sepia'}}>Sepia</button>
+		<button class="button effects-button" {{action 'setEffect' 'blur'}}>Blur</button>
+		<button class="button effects-button" {{action 'setEffect' 'gray'}}>Gray</button>
+		<button class="button effects-button" {{action 'setEffect' 'saturate'}}>Saturate</button>
+		<button class="button effects-button smaller-font-button" {{action 'setEffect' 'zoomIn'}}>Zoom In</button>
+		<button class="button effects-button smaller-font-button" {{action 'changeEffectsWithBg' 'zoomOut' 'zoomedOut'}}>Zoom Out</button>
+		<button class="button effects-button" {{action 'reset'}}>Reset</button>
+		<br/>
+		<button class="button effects-button" {{action 'addTextField'}}>Text</button>
+		<br>
+		<button class="button effects-button delete-button" {{action 'deletePhoto'}}>Delete</button>
+		<button class="button effects-button pulse" {{action 'save'}}>Save</button>
+	</div>
+
+
+	<div class="textAreaSelectable {{optionsStatus}} {{onDisplay}} {{textDesired}}" {{action "mouseDown" on="mouseDown"}} {{action "mouseUp" on="mouseUp"}}>
+	</div>
+
+	{{textarea value=photoSectionText wrap=true spellcheck=true placeholder="Your words, to inspire!" class="textarea textForDisplay" classBinding="optionsStatus onDisplay textDesired" mouseUp=(action "adjustSelectableSize") focusIn=(action "displayEditBar") focusOut=(action "undisplayEditBar") keyUp=(action "inputText")}}
+
+	<div class="textForDisplay {{onDisplayNot}}">{{photoSectionText}}</div>
+</div>
+
